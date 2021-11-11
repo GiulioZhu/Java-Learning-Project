@@ -189,11 +189,6 @@ public class Review {
        // find each word
        // add in its sentimentVal
        // set the file contents to start after this word
-   
-   
-
-
-
    return Math.round(sentimentTotal*100)/100.0;
   }
 
@@ -208,8 +203,18 @@ public class Review {
     // determine number of stars between 0 and 4 based on totalSentiment value 
     int stars = 0; // change this!
     // write if statements here
-
-
+    double sentiment = totalSentiment(filename);
+    if (sentiment <= -5.0) {
+      stars = 0;
+    } else if (sentiment <= 0.0) {
+      stars = 1;
+    } else if (sentiment <= 10.0) {
+      stars = 2;
+    } else if (sentiment <= 20.0) {
+      stars = 3;
+    } else {
+      stars = 4;
+    }
   
     // return number of stars
     return stars; 
