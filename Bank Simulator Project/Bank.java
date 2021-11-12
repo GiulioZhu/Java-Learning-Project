@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class BankAccount
+public class Bank
 {
     private int accountID;
     private double total;
 
 
-    public BankAccount(int id, double initialDeposit)
+    public Bank(int id, double initialDeposit)
     {
         accountID = id;
         total = initialDeposit;
