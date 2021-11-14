@@ -1,8 +1,8 @@
 import java.util.*;
 
+// Later on need to incorporate the verification system innto Swing & improve UI
 public class Password {
 	private final String password = "Password100";
-	Scanner data = new Scanner(System.in);
 
 	public boolean isCorrect(String passcode) {
 		return passcode.equals(password);
@@ -10,8 +10,9 @@ public class Password {
 
 	public void verification(String passcode) {
 	 	while (!isCorrect(passcode)) {
-            System.out.print("Enter your password (or \"exit\" to end): ");
-            passcode = data.nextLine();
+            // System.out.print("Enter your password (or \"exit\" to end): ");
+            char[] passChar = System.console().readPassword("Enter your password (or \"exit\" to end): ");
+            passcode = String.valueOf(passChar);
             if (passcode.equals("exit")) {
                 exitCommand();
             } else if (!isCorrect(passcode)) {
