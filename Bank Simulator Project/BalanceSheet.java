@@ -2,20 +2,14 @@ import java.util.*;
 import java.io.*;
 
 public class BalanceSheet {
-   private int accountID;   
    private double deposit;
    Map<Integer, Double> database = new HashMap<Integer, Double>();
    File file = new File("/Users/giuliozhu/Desktop/Java-Learning-Project/Bank Simulator Project/Balance Sheet");  
    BufferedWriter bf = null;
    BufferedReader br = null;
 
-   public void addToBalance(int id, double initDeposit) {
-      if (database.containsKey(id)) {
-         double newBalance = database.get(id) + initDeposit;
-         database.put(id, newBalance);
-      } else {
-         database.put(id, initDeposit);
-      }
+   public void updateBalance(int id, double initDeposit) {
+      database.put(id, initDeposit);
    }
    public double getBalance(int id) {
       if (database.containsKey(id)) {
@@ -27,11 +21,15 @@ public class BalanceSheet {
    public void saveBalance() {  
       try {  
          // create new BufferedWriter for the output file
-         bf = new BufferedWriter(new FileWriter(file));  
+         bf = new BufferedWriter(new FileWriter(file)); 
+         br = new BufferedReader(new FileReader(file));
+         String line = null; 
          // iterate map entries
          for (Map.Entry<Integer, Double> entry :
                database.entrySet()) {
-
+            if ((line = br.readLine()) != null) {
+               bf.newLine();
+            }
             // put key and value separated by a colon
             bf.write(entry.getKey() + ":" + entry.getValue());  
             // new line
@@ -46,6 +44,7 @@ public class BalanceSheet {
          try {  
             // always close the writer
             bf.close();
+            br.close();
          }
          catch (Exception e) {
          }

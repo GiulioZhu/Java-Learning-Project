@@ -6,7 +6,9 @@ import java.text.*;
 
 public class UI {
 	public void run(Bank bank) {
-		// Window Frame
+		// Welcome Message 
+        bank.printCurrentTotal();
+        // Window Frame
         JFrame frame = new JFrame("Bank");
         frame.setSize(500, 500);
         frame.setLayout(null);
