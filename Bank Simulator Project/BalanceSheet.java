@@ -4,7 +4,7 @@ import java.io.*;
 public class BalanceSheet {
    private double deposit;
    Map<Integer, Double> database = new HashMap<Integer, Double>();
-   File file = new File("/Users/giuliozhu/Desktop/Java-Learning-Project/Bank Simulator Project/Balance Sheet");  
+   File file = new File("/Users/giuliozhu/Desktop/Programming/Java-Learning-Project/Bank Simulator Project/Balance Sheet");  
    BufferedWriter bf = null;
    BufferedReader br = null;
 
