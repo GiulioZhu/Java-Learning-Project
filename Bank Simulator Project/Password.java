@@ -1,5 +1,3 @@
-import java.util.*;
-
 // Later on need to incorporate the verification system innto Swing & improve UI
 public class Password {
 	private final String password = "Password100";
