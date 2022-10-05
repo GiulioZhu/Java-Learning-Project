@@ -5,7 +5,6 @@ public class ClassGrade {
 		List<String> categories = new ArrayList<String>();
 		List<Double> grades = new ArrayList<Double>();
 		List<Double> percentages = new ArrayList<Double>();
-		List<Double> rubrics = new ArrayList<Double>();
 		List<Double> listOfGrades = new ArrayList<Double>();
 		double classGrade = 0;
 		double sumOfGrades = 0;
