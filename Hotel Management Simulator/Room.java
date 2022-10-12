@@ -30,8 +30,8 @@ public class Room {
         }
     }
     
-    public void getRoomNum() {
-        System.out.println(roomNumber);
+    public int getRoomNum() {
+        return roomNumber;
     }
 
     public void getRoomMates() {

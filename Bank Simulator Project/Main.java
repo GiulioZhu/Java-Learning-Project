@@ -1,8 +1,4 @@
 import java.util.*;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.text.*;
 
 public class Main
 {
@@ -19,6 +15,7 @@ public class Main
         int id = data.nextInt();
         System.out.print("Enter your initial deposit: ");
         double initialDeposit = data.nextDouble();
+        data.close();
         Bank bank = new Bank(id, initialDeposit);
 
         UI ui = new UI();
