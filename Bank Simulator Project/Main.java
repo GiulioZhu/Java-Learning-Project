@@ -14,11 +14,14 @@ public class Main
         System.out.print("Welcome back! please enter your ID: ");
         int id = data.nextInt();
         System.out.print("Enter your initial deposit: ");
-        double initialDeposit = data.nextDouble();
+        float initialDeposit = data.nextFloat();
         data.close();
         Bank bank = new Bank(id, initialDeposit);
-
         UI ui = new UI();
         ui.run(bank);
     }
 }
+
+/* To Run DataBaseConnection file
+ * 2. run: "java -classpath ".;sqlite-jdbc-3.39.3.0.jar" Main"
+*/

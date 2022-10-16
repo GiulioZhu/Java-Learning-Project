@@ -2,15 +2,15 @@ import java.util.*;
 import java.io.*;
 
 public class BalanceSheet {
-   Map<Integer, Double> database = new HashMap<Integer, Double>();
+   Map<Integer, Float> database = new HashMap<Integer, Float>();
    File file = new File("C:/Users/Giuli/OneDrive/Desktop/Java-Learning-Project/Bank Simulator Project/Balance Sheet");  
    BufferedWriter bf = null;
    BufferedReader br = null;
 
-   public void updateBalance(int id, double initDeposit) {
+   public void updateBalance(int id, float initDeposit) {
       database.put(id, initDeposit);
    }
-   public double getBalance(int id) {
+   public float getBalance(int id) {
       if (database.containsKey(id)) {
          return database.get(id);
       } else {
@@ -24,7 +24,7 @@ public class BalanceSheet {
          br = new BufferedReader(new FileReader(file));
          String line = null; 
          // iterate map entries
-         for (Map.Entry<Integer, Double> entry :
+         for (Map.Entry<Integer, Float> entry :
                database.entrySet()) {
             if ((line = br.readLine()) != null) {
                bf.newLine();
@@ -67,7 +67,7 @@ public class BalanceSheet {
              // put name, number in HashMap if they are
              // not empty
              if (!key.equals("") && !key.equals(""))
-                 database.put(Integer.parseInt(key), Double.parseDouble(value));
+                 database.put(Integer.parseInt(key), Float.parseFloat(value));
          }
       }
       catch (Exception e) {

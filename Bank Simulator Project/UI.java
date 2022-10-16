@@ -26,11 +26,12 @@ public class UI {
                     System.out.println("You didn't deposit anything");
                     depositBox.setText("0");
                 } else {
-                    double depositNumber = Double.parseDouble(depositBox.getText());
+                    float depositNumber = Float.parseFloat(depositBox.getText());
                     label.setText("You deposited: " + depositBox.getText()); 
                     bank.deposit(depositNumber);    
                     depositBox.setText("");
                     bank.printCurrentTotal();
+                    bank.update();
                 }
             }
         });
@@ -49,11 +50,12 @@ public class UI {
                     System.out.println("You didn't withdraw anything");
                     withdrawBox.setText("0");
                 } else {
-                    double withdrawNumber = Double.parseDouble(withdrawBox.getText());
+                    float withdrawNumber = Float.parseFloat(withdrawBox.getText());
                     label.setText("You withdrew: " + withdrawBox.getText());   
                     bank.withdraw(withdrawNumber);
                     withdrawBox.setText("");
                     bank.printCurrentTotal();
+                    bank.update();
                 }
             }
         });

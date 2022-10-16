@@ -16,16 +16,16 @@ public class SampleJDBC
       Statement statement = connection.createStatement();
       statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
-      statement.executeUpdate("drop table if exists person");
-      statement.executeUpdate("create table person (id integer, name string)");
-      statement.executeUpdate("insert into person values(1, 'leo')");
-      statement.executeUpdate("insert into person values(2, 'yui')");
-      ResultSet rs = statement.executeQuery("select * from person");
+      statement.executeUpdate("drop table if exists Balance");
+      statement.executeUpdate("create table Balance (ID INTEGER, BALANCE FLOAT)");
+      statement.executeUpdate("insert into Balance values(1010, 2020.5)");
+      statement.executeUpdate("insert into Balance values(1011, 102.2)");
+      ResultSet rs = statement.executeQuery("select * from Balance");
       while(rs.next())
       {
         // read the result set
-        System.out.println("name = " + rs.getString("name"));
-        System.out.println("id = " + rs.getInt("id"));
+        System.out.println("ID = " + rs.getInt("ID"));
+        System.out.println("BALANCE = " + rs.getFloat("BALANCE"));
       }
     }
     catch(SQLException e)

@@ -1,22 +1,27 @@
 public class Bank
 {
     private int accountID;
-    private double total;
+    private float total;
     BalanceSheet balance = new BalanceSheet();
+    DatabaseConnection connect = new DatabaseConnection(accountID, total);
 
-    public Bank(int id, double initialDeposit)
+    public Bank(int id, float initialDeposit)
     {
         balance.retrieveBalance();
         accountID = id;
         total = balance.getBalance(accountID) + initialDeposit;
     }
 
-    public void deposit(double money)
+    public void update() {
+        connect.update();
+    }
+    
+    public void deposit(float money)
     {
         total = total + money;
     }
 
-    public void withdraw(double money)
+    public void withdraw(float money)
     {
         total = total - money;
     }
