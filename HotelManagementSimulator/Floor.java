@@ -14,9 +14,9 @@ public class Floor {
         rooms.add(room);
     }
 
-    public void deleteRoom (int floor, int roomNumber) {
+    public void deleteRoom (int floor, String roomNumber) {
         for (Room room : floors.get(floor)) {
-            if (room.getRoomNum() == roomNumber) {
+            if (room.getRoomNum().equals(roomNumber)) {
                 floors.get(floor).remove(rooms.indexOf(room));
             }
         }
@@ -29,7 +29,4 @@ public class Floor {
             return -1;
         }
     }
-
-
-
 }

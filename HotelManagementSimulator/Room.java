@@ -1,18 +1,18 @@
 import java.util.*;
 
 public class Room {
-    private int roomNumber;
+    private String roomNumber;
     ArrayList<String> mates = new ArrayList<String>();
     private String roomIssue = "N/A";
 
-    public Room (int number, String mate1, String mate2) {
+    public Room (String number, String mate1, String mate2) {
         roomNumber = number;
         mates.add(mate1);
         mates.add(mate2);
 
     }
 
-    public Room (int number, String mate1, String mate2, String mate3) {
+    public Room (String number, String mate1, String mate2, String mate3) {
         roomNumber = number;
         mates.add(mate1);
         mates.add(mate2);
@@ -24,26 +24,27 @@ public class Room {
             if (mate == current) {
                 mates.remove(mates.indexOf(mate));
                 mates.add(newMate);
-            } else {
-                System.out.println(current +" not present in room " + roomNumber);
             }
         }
     }
     
-    public int getRoomNum() {
+    public String getRoomNum() {
         return roomNumber;
     }
 
-    public void getRoomMates() {
-        System.out.println(mates);
+    public ArrayList<String> getRoomMates() {
+        return mates;
     }
 
     public void reportIssue (String issue) {
         roomIssue = issue;
     }
 
-    public void getRoomIssue() {
-        System.out.println(roomIssue);
+    public String getRoomIssue() {
+        return roomIssue;
     }
 
+    public String toCSV() {
+        return roomNumber + "," + mates.get(0) + "," + mates.get(1) + "," + mates.get(2) + "," + roomIssue; // roomIssue still needs to be developed in the future. Atm it's present but unused.
+    }
 }
